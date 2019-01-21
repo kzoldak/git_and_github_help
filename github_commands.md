@@ -125,12 +125,12 @@ Check box that says initialize this repo with a README. This repo now exists on 
 
 
 
-The most commonly used git commands are:
-
->   add        Add file contents to the index
->   bisect     Find by binary search the change that introduced a bug
->   branch     List, create, or delete branches
->   checkout   Checkout a branch or paths to the working tree
+### The most commonly used git commands are:
+```
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
    clone      Clone a repository into a new directory
    commit     Record changes to the repository
    diff       Show changes between commits, commit and working tree, etc
@@ -153,3 +153,4 @@ The most commonly used git commands are:
 concept guides. See 'git help <command>' or 'git help <concept>'
 to read about a specific subcommand or concept.
 
+```
