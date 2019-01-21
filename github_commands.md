@@ -59,7 +59,7 @@ __Cloning a github repository.__
 
 Replace url with the url of the github repository you are wanting to download to your computer. To get this url, go to the owner’s repository page and click on the green buttom that says "Clone or download". After the dropdown window appears, you can click the picture of the clipboard to copy the url to your clipboard. Paste this into the termial. There is a .git folder within each repository that stores all the git information of that repository. 
 
-`git remote -v`
+`git remote -v` </br>
 References to remotes that are not on your computer. 
 This command should return something like: `origin https://github.com/kzoldak/pandas.git`
 There should be two of these; one with `(fetch)` at the end and one with `(push)` at the end. 
