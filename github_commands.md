@@ -55,8 +55,7 @@ Before doing anything, cd into the directory where all your Github repositories 
 
 __Cloning a github repository.__
 
-`git clone url`
-
+`git clone url` </br>
 Replace url with the url of the github repository you are wanting to download to your computer. To get this url, go to the owner’s repository page and click on the green buttom that says "Clone or download". After the dropdown window appears, you can click the picture of the clipboard to copy the url to your clipboard. Paste this into the termial. There is a .git folder within each repository that stores all the git information of that repository. 
 
 `git remote -v` </br>
@@ -65,76 +64,73 @@ This command should return something like: `origin https://github.com/kzoldak/pa
 There should be two of these; one with `(fetch)` at the end and one with `(push)` at the end. 
 
 
-`git remote add origin url`
+`git remote add origin url` </br>
 Setup an origin remote. Again, url should be replaced by the proper url of the github repository. You will need this to push your master branch to (i.e., push your changes made upto your Github page). 
+
 
 __At this point, you should be editing some files on your computer that you want to add to a repository.__
 
-`git status`
+
+`git status` </br>
 Check on the status of the files you edited or created. Should tell you which files you made changes to. You need to stage all files for committing. You do this with the add command. 
 
-`git add filename`
+`git add filename` </br>
 Replace filename with the actual name of the file. This stages a new file for committing. You can use this one if you made a single file.
 
-`git add .`
+`git add .` </br>
 Use this if you've made several new files, or edited several files. The . stages all of these files at once. 
 
-`git add -A`
-If I've made changes to many files, both created new and deleted old files, I use this one. 
+`git add -A` </br>
+If I've made a lot changes, I use this. This works best for cleaning up folders and files when I've created new and deleted old. 
 
-`git status` 
+`git status` </br>
 Do a status check to make sure you didn't forget any files. 
 
-`git commit -m "edited README.md"`
+`git commit -m "edited README.md"` </br>
 Before pushing your master branch to the origin remote, you must commit with a message. Every commit requires a message. Here is where you type it. -m stands for message. Message follows in quotations. 
 
-`git status`
+`git status` </br>
 Check once more to see if everything is read. Git will tell you if everything is clean and there is nothing more to commit.
 	
-`git log`
+`git log` </br>
 	Check the log files. Don't need to do this step, but it's nice to check it. 
 
-`git push origin master`
+`git push origin master` </br>
 Push your changes up to your Github website. 
 *Action Explained: You are pushing your master branch to the origin remote.*
 THIS WILL FAIL IF YOU FORGOT TO SET UP A REMOTE. 
 SEE:  git remote add origin url
 
+---
 
-————
 ### Notes:
-If you perform a lot of changes within a directory, such as moving files around and making new sub directories, using the  git add .  won't get rid of the old files. 
+If you perform a lot of changes within a directory, such as moving files around and making new sub directories, using the  `git add .`  won't get rid of the old files. 
 
-TRY:
-git add -A
-git commit -m 'blah blah blah'
-git push origin master
+Instead, try using: </br>
+`git add -A`
 
-If things have really gotten bad, try:
-git diff --name-only --diff-filter=D -z | xargs -0 git rm --cached
-git reset HEAD .
-git commit -a
-git push origin master
+If things have really gotten bad, try: </br>
+`git diff --name-only --diff-filter=D -z | xargs -0 git rm --cached`
+`git reset HEAD .`
+`git commit -a`
+`git push origin master`
 
-I am uncertain where exactly the command is cleaning up the files on the website because running the git diff line doesn't entirely do it.  For more help, don't forget you can do:  git help rm   for help on removing files. 
+ALL of these commands must be used. I'm uncertain exactly where the cleaning up is done because running the `git diff ...` line doesn't entirely do it on its own. I found this in the `git help rm` for help on removing files. 
 
 
 	
-#### Making a New Repository:
+### Making a New Repository:
 To make a new repo, you first need to make it on your GitHub page by clicking the + sign and clicking on New Repository. Choose a name and write a description. Choose public. 
 Check box that says initialize this repo with a README. This repo now exists on Github ONLY and not your local computer. To get it on your local computer, use the steps listed above, under Steps at the Terminal. These steps work for a repo you created yourself as well as one you forked from someone else. 
 
 
 
-__pull request__ – when a contributor makes changes to a package’s code and they are requesting the repository owner to pull those changes into the repository and make them permanent. 
-
-
 The most commonly used git commands are:
 
-   add        Add file contents to the index
-   bisect     Find by binary search the change that introduced a bug
-   branch     List, create, or delete branches
-   checkout   Checkout a branch or paths to the working tree
+>   add        Add file contents to the index
+>   bisect     Find by binary search the change that introduced a bug
+>   branch     List, create, or delete branches
+>   checkout   Checkout a branch or paths to the working tree
    clone      Clone a repository into a new directory
    commit     Record changes to the repository
    diff       Show changes between commits, commit and working tree, etc
