@@ -46,7 +46,7 @@ __merging__ – merging is when you take the fetch changes and upload them to yo
 ** anything in italic needs to be substituted for. Those will be explained after each one. 
 
 
-`git clone *url*`
+`git clone _url_`
 url is the url of the github repository you are downloading to your computer. Go to the owner’s repo page and you can click on “get url”. Paste that into the terminal after git clone. There is a .git folder within each repository that stores all the git information of that repository. 
 
 git remote -v
