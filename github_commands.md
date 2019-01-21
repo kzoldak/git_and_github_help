@@ -27,7 +27,7 @@ __Cloning__ – download a repo to your computer.
 
 __Pushing__ – upload changes you made to a repo to your Github page on that repo. 
 
-__Pull Request__ – request author or owner of the original repo to pull your changes into their repo version. That way your changes will be included for all future users who download their repo. 
+__Pull Request__ – when a contributor makes changes to a package’s code and they are requesting the repository owner to pull those changes into the repository and make them permanent. All future users that download the repository would have the changes you made. 
 
 __Commit__ – commit changes that you have made to a repo from your computer.
 
@@ -54,7 +54,9 @@ Before doing anything, cd into the directory where all your Github repositories 
 
 
 __Cloning a github repository.__
+
 `git clone url`
+
 Replace url with the url of the github repository you are wanting to download to your computer. To get this url, go to the owner’s repository page and click on the green buttom that says "Clone or download". After the dropdown window appears, you can click the picture of the clipboard to copy the url to your clipboard. Paste this into the termial. There is a .git folder within each repository that stores all the git information of that repository. 
 
 `git remote -v`
