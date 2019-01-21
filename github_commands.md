@@ -42,79 +42,67 @@ __merging__ – merging is when you take the fetch changes and upload them to yo
 	git config --global user.email “your email”
 
 
-# Steps at the Terminal 
-** anything in italic needs to be substituted for. Those will be explained after each one. 
+# Steps at the Terminal For Adding Content to Github
+Before doing anything, cd into the directory where all your Github repositories exist. Or, if you are planning on uploading an existing directory onto your Github page, cd into that directory. 
+
+### Before you can start adding content to a repository on your Github page, you must add the repository. To do this:
+1. Go to your Github page
+2. Hit the `+` sign 
+3. Choose "New repository"
+4. Give it a name, a description (optional) and then check to box that initializes the repo with a README.md file. *If you don't do this, it takes you directly to a page that gives instrucitons of how to do it from the terminal.*
+5. Go to your terminal and clone the repository. See steps below. 
 
 
-`git clone _url_`
-url is the url of the github repository you are downloading to your computer. Go to the owner’s repo page and you can click on “get url”. Paste that into the terminal after git clone. There is a .git folder within each repository that stores all the git information of that repository. 
+__Cloning a github repository.__
+`git clone url`
+Replace url with the url of the github repository you are wanting to download to your computer. To get this url, go to the owner’s repository page and click on the green buttom that says "Clone or download". After the dropdown window appears, you can click the picture of the clipboard to copy the url to your clipboard. Paste this into the termial. There is a .git folder within each repository that stores all the git information of that repository. 
 
-git remote -v
-	references to remotes that are not on your computer. 
-	this command should return something like:
-	origin https://github.com/mtbk24/PyDataScience.git
-	There should be 2 of these. One with (fetch) at the end 
-	and one with (push) at the end. 
+`git remote -v`
+References to remotes that are not on your computer. 
+This command should return something like: `origin https://github.com/kzoldak/pandas.git`
+There should be two of these; one with `(fetch)` at the end and one with `(push)` at the end. 
 
-git remote add origin url
-	setup a remote. 
+
+`git remote add origin url`
+Setup an origin remote. Again, url should be replaced by the proper url of the github repository. You will need this to push your master branch to (i.e., push your changes made upto your Github page). 
+
+__At this point, you should be editing some files on your computer that you want to add to a repository.__
+
+`git status`
+Check on the status of the files you edited or created. Should tell you which files you made changes to. You need to stage all files for committing. You do this with the add command. 
+
+`git add filename`
+Replace filename with the actual name of the file. This stages a new file for committing. You can use this one if you made a single file.
+
+`git add .`
+Use this if you've made several new files, or edited several files. The . stages all of these files at once. 
+
+`git add -A`
+If I've made changes to many files, both created new and deleted old files, I use this one. 
+
+`git status` 
+Do a status check to make sure you didn't forget any files. 
+
+`git commit -m "edited README.md"`
+Before pushing your master branch to the origin remote, you must commit with a message. Every commit requires a message. Here is where you type it. -m stands for message. Message follows in quotations. 
+
+`git status`
+Check once more to see if everything is read. Git will tell you if everything is clean and there is nothing more to commit.
 	
+`git log`
+	Check the log files. Don't need to do this step, but it's nice to check it. 
 
-EDIT SOME OF THE FILES ON YOUR COMPUTER.
-FOR EXAMPLE, 
-
-vi README.md
-	… make changes to readme file
-touch new.md
-	… make a new file and put stuff in it. 
-
-git status
-	check on the status of the files you edited or created. 
-	Should tell you which files you made changes to. 
-	You need to stage all files for committing. You do this with the add command. 
-
-git add new.md
-	staging a new file before committing it.  
-	this is an example of making a new markdown (.md) file. 		
-	You would use this to make a new file, but replace new.md with the name of the file. 
-
-git add README.md
-	staging an edited file before committing it.
-	if your repo doesn't have a README.md file, you need to make one. 
-
-git add .
-	Instead of using the last two   git add filename   examples, 
-	you can stage all the new and edited files at once using   git add .
-	This saves time and takes care of all your files at once. 
-
-git status 
-	do a status check to make sure you didn't forget any files. 
-
-git commit -m "edited README.md and added new.md"
-	the -m stands for message. For every commit, you must provide a message. 
-	It's required!
-
-git status
-	check once more to see if everything is read. Git will tell you if everything is clean 
-	and there is nothing more to commit.
-On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working directory clean
-	
-git log
-	check the log files. don't need to do this step, but it's nice to check it. 
-
-git push origin master
-	push your changes up to your Github website. 
-	you are pushing your master branch to the origin remote. 
-	THIS WILL FAIL IF YOU FORGOT TO SET UP A REMOTE. 
-	SEE:  git remote add origin url
+`git push origin master`
+Push your changes up to your Github website. 
+*Action Explained: You are pushing your master branch to the origin remote.*
+THIS WILL FAIL IF YOU FORGOT TO SET UP A REMOTE. 
+SEE:  git remote add origin url
 
 
 ————
+### Notes:
 If you perform a lot of changes within a directory, such as moving files around and making new sub directories, using the  git add .  won't get rid of the old files. 
+
 TRY:
 git add -A
 git commit -m 'blah blah blah'
@@ -130,13 +118,13 @@ I am uncertain where exactly the command is cleaning up the files on the website
 
 
 	
-Making a New Repository
+#### Making a New Repository:
 To make a new repo, you first need to make it on your GitHub page by clicking the + sign and clicking on New Repository. Choose a name and write a description. Choose public. 
 Check box that says initialize this repo with a README. This repo now exists on Github ONLY and not your local computer. To get it on your local computer, use the steps listed above, under Steps at the Terminal. These steps work for a repo you created yourself as well as one you forked from someone else. 
 
 
 
-pull request – when a contributor makes changes to a package’s code and they are requesting the repository owner to pull those changes into the repository and make them permanent. 
+__pull request__ – when a contributor makes changes to a package’s code and they are requesting the repository owner to pull those changes into the repository and make them permanent. 
 
 
 The most commonly used git commands are:
